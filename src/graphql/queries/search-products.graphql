@@ -1,0 +1,34 @@
+query SearchProducts ($search: String){
+  product: productsConnection (where: {_search: $search}) {
+	  edges {
+      node {
+        name
+        brand {
+          brandName
+        }
+        price
+        id
+        discount
+        available
+        image {
+          mainImage {
+            url
+          },
+          productImages {
+            url
+          }
+        }
+      }
+    }
+    
+    aggregate {
+      count
+    }
+    pageInfo {
+      pageSize
+      hasPreviousPage
+      hasNextPage
+      startCursor
+    }
+  }
+}

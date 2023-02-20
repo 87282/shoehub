@@ -1,0 +1,24 @@
+query CheckProduct ($id: ID!) {
+  product: productsConnection(where: {id: $id}) {
+    edges {
+      node {
+        id
+        name
+        description
+        brand {
+          brandName
+        }
+        available
+        price
+        image {
+          productImages {
+            url
+          }
+          mainImage {
+            url
+          }
+        }
+      }
+    }
+  }
+}

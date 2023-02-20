@@ -1,0 +1,29 @@
+query GetCustomerOrdersByEmail ($limit: Int!, $offset:Int!, $email: String!) {
+  orders (orderBy:createdAt_DESC, first: $limit, skip: $offset, where: {customer: {email: $email}}) {
+    orderId,
+    isMoreThanOneProduct,
+    product {
+      id
+      name
+      brand { 
+      	brandName
+      }
+      image {
+        mainImage {
+          url
+        }
+      }
+    }
+    amount,
+    price,
+    createdAt
+  }
+  ordersConnection (first: $limit, skip: $offset, where: {customer: {email: $email}}) {
+    pageInfo {
+      pageSize
+      hasPreviousPage
+      hasNextPage
+      startCursor
+    }
+  }
+}
