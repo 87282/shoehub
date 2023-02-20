@@ -47,7 +47,7 @@ export function SimilarProduct({
             <div className="mt-1 flex items-start md:gap-1 justify-center md:mt-2">
               <span className="flex items-center gap-1">
                 <p className="text-[18px] md:text-2xl">€</p>
-                <p className="text-[18px] md:text-2xl">  {(price / 100 / 12).toFixed(2)}</p>
+                <p className="text-[18px] md:text-2xl">  {(price ? price / 100/ 12 : 0 ).toFixed(2)}</p>
               </span>
               <span className="text-green-500 text-[14px]">
                 {discount}% er van af
