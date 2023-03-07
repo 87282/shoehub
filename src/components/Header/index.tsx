@@ -28,7 +28,7 @@ export function Header() {
               <Link href="/">Alle schoenen</Link>
             </li>
             <li className="hidden lg:block transition-colors hover:text-yellow-500 cursor-pointer">
-              <Link href="https://Lars-vermeulen.nl">Contact</Link>
+              <Link href="/contact">Contact</Link>
             </li>
             {session?.user?.image ? (
               <li className="hidden lg:block transition-colors hover:text-yellow-500 cursor-pointer">
